@@ -1,43 +1,56 @@
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, Lock } from "lucide-react"
 import { projects } from "../data"
 import { Reveal } from "./Reveal"
 
 type Project = (typeof projects)[number]
 
-const orderClass: Record<string, string> = {
-  "01": "max-md:order-1",
-  "02": "max-md:order-2",
-  "03": "max-md:order-3",
-  "04": "max-md:order-4",
-}
+function Card({ p }: { p: Project }) {
+  const isPrivate = !p.href
 
-function Card({ p, className = "" }: { p: Project; className?: string }) {
-  return (
-    <a
-      href={p.href}
-      target="_blank"
-      rel="noreferrer noopener"
-      className={`group relative block ${className}`}
-      aria-label={`${p.title} — view source on GitHub`}
-    >
+  const inner = (
+    <>
       <div
         className={`relative overflow-hidden rounded-2xl border border-white/10 bg-surface ${p.aspect}`}
+        style={
+          isPrivate
+            ? {
+                background: `radial-gradient(130% 110% at 12% 0%, ${p.accent}26, transparent 55%), linear-gradient(165deg, #16161a 0%, #0b0b0d 70%)`,
+              }
+            : undefined
+        }
       >
-        <img
-          src={p.image}
-          alt={`${p.title} project preview`}
-          loading="lazy"
-          className="h-full w-full object-cover opacity-80 saturate-[0.85] transition-all duration-[900ms] ease-out group-hover:scale-[1.05] group-hover:opacity-100 group-hover:saturate-100"
-        />
+        {isPrivate ? (
+          <span
+            aria-hidden
+            className="pointer-events-none absolute -right-3 top-6 select-none text-[8.5rem] font-semibold leading-none tracking-tighter"
+            style={{ color: p.accent, opacity: 0.14 }}
+          >
+            {p.id}
+          </span>
+        ) : (
+          <img
+            src={p.image}
+            alt={`${p.title} project preview`}
+            loading="lazy"
+            className="h-full w-full object-cover opacity-80 saturate-[0.85] transition-all duration-[900ms] ease-out group-hover:scale-[1.05] group-hover:opacity-100 group-hover:saturate-100"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent opacity-90" />
 
         <div className="absolute inset-x-0 top-0 flex items-start justify-between p-5">
           <span className="rounded-full border border-white/15 bg-ink/50 px-3 py-1 font-mono text-[11px] tracking-wider text-cream/80 backdrop-blur-md">
             {p.id} / {p.year}
           </span>
-          <span className="grid size-10 translate-y-1 place-items-center rounded-full border border-white/15 bg-ink/50 text-cream opacity-0 backdrop-blur-md transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-hover:border-acid/60 group-hover:text-acid">
-            <ArrowUpRight className="size-4" />
-          </span>
+          {isPrivate ? (
+            <span className="inline-flex translate-y-1 items-center gap-1.5 rounded-full border border-white/15 bg-ink/50 px-3 py-1 text-[11px] text-cream/70 backdrop-blur-md">
+              <Lock className="size-3" />
+              Private
+            </span>
+          ) : (
+            <span className="grid size-10 translate-y-1 place-items-center rounded-full border border-white/15 bg-ink/50 text-cream opacity-0 backdrop-blur-md transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-hover:border-acid/60 group-hover:text-acid">
+              <ArrowUpRight className="size-4" />
+            </span>
+          )}
         </div>
 
         <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
@@ -65,13 +78,36 @@ function Card({ p, className = "" }: { p: Project; className?: string }) {
           />
         </div>
       </div>
+    </>
+  )
+
+  if (isPrivate) {
+    return (
+      <div
+        className="group relative block cursor-default"
+        aria-label={`${p.title} — private production work`}
+      >
+        {inner}
+      </div>
+    )
+  }
+
+  return (
+    <a
+      href={p.href}
+      target="_blank"
+      rel="noreferrer noopener"
+      className="group relative block"
+      aria-label={`${p.title} — view source on GitHub`}
+    >
+      {inner}
     </a>
   )
 }
 
 export function Work() {
-  const left = [projects[0], projects[2]]
-  const right = [projects[1], projects[3]]
+  const left = projects.filter((_, i) => i % 2 === 0)
+  const right = projects.filter((_, i) => i % 2 === 1)
 
   return (
     <section id="work" className="relative scroll-mt-24 py-24 sm:py-32">
@@ -89,8 +125,8 @@ export function Work() {
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed text-muted">
-            Four projects, all open source. The code, commits and rough edges are
-            on GitHub.
+            Six products shipped at INEV Technologies, plus four open source
+            projects on GitHub.
           </p>
         </div>
 
@@ -100,7 +136,7 @@ export function Work() {
               <Reveal
                 key={p.id}
                 delay={i * 0.06}
-                className={orderClass[p.id]}
+                style={{ order: projects.indexOf(p) }}
               >
                 <Card p={p} />
               </Reveal>
@@ -111,7 +147,7 @@ export function Work() {
               <Reveal
                 key={p.id}
                 delay={0.06 + i * 0.06}
-                className={orderClass[p.id]}
+                style={{ order: projects.indexOf(p) }}
               >
                 <Card p={p} />
               </Reveal>
@@ -122,7 +158,8 @@ export function Work() {
         <Reveal delay={0.1}>
           <div className="mt-16 flex flex-col items-start justify-between gap-4 rounded-2xl border border-white/10 bg-surface px-6 py-6 sm:flex-row sm:items-center">
             <p className="text-sm text-muted">
-              Company work stays private. Everything else is open source.
+              Production code at INEV stays private. Personal projects are open
+              source.
             </p>
             <a
               href="https://github.com/poudelaman4"

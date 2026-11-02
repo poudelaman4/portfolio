@@ -1,4 +1,4 @@
-import { motion, type Variants } from "motion/react"
+import { motion, type Variants, type MotionStyle } from "motion/react"
 import type { ReactNode } from "react"
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -13,15 +13,18 @@ export function Reveal({
   delay = 0,
   className,
   y = 26,
+  style,
 }: {
   children: ReactNode
   delay?: number
   className?: string
   y?: number
+  style?: MotionStyle
 }) {
   return (
     <motion.div
       className={className}
+      style={style}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-90px" }}

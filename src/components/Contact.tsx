@@ -88,10 +88,10 @@ export function Contact() {
 
         <Reveal delay={0.18}>
           <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Magnetic strength={0.14}>
+            <Magnetic strength={0.14} className="w-full sm:w-auto">
               <a
                 href={`mailto:${profile.email}`}
-                className="group inline-flex items-center gap-3 rounded-full bg-cream px-6 py-4 text-sm font-semibold text-ink transition-colors hover:bg-acid"
+                className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-cream px-6 py-4 text-sm font-semibold text-ink transition-colors hover:bg-acid sm:w-auto"
               >
                 {profile.email}
                 <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
