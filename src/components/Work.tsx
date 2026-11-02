@@ -30,8 +30,13 @@ function Card({ p }: { p: Project }) {
         ) : (
           <img
             src={p.image}
+            srcSet={[600, 900, 1400]
+              .map((w) => `${p.image.replace(/w=\d+/, `w=${w}`)} ${w}w`)
+              .join(", ")}
+            sizes="(max-width: 767px) calc(100vw - 3rem), 50vw"
             alt={`${p.title} project preview`}
             loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover opacity-80 saturate-[0.85] transition-all duration-[900ms] ease-out group-hover:scale-[1.05] group-hover:opacity-100 group-hover:saturate-100"
           />
         )}
