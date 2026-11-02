@@ -89,3 +89,11 @@
     mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   }
 }
+
+/* Hide Netlify's edge-injected "Powered by Netlify" badge iframe.
+   It's a one-shot mount (no observer re-creates it), so display:none wins. */
+#nl-badge-frame,
+#nl-hud-frame,
+iframe[title="Powered by Netlify"] {
+  display: none !important;
+}
