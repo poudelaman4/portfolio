@@ -12,14 +12,14 @@ function Card({ p }: { p: Project }) {
       <div
         className={`relative overflow-hidden rounded-2xl border border-white/10 bg-surface ${p.aspect}`}
         style={
-          isPrivate
+          !p.image
             ? {
                 background: `radial-gradient(130% 110% at 12% 0%, ${p.accent}26, transparent 55%), linear-gradient(165deg, #16161a 0%, #0b0b0d 70%)`,
               }
             : undefined
         }
       >
-        {isPrivate ? (
+        {!p.image ? (
           <span
             aria-hidden
             className="pointer-events-none absolute -right-3 top-6 select-none text-[8.5rem] font-semibold leading-none tracking-tighter"

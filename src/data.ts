@@ -61,7 +61,8 @@ export const projects = [
     subtitle: "Multi-tenant LMS with courses, quizzes and payments",
     year: "2026",
     tags: ["NestJS", "React", "PostgreSQL"],
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
     aspect: "aspect-[16/11]",
     accent: "#c9f75a",
     href: "",
@@ -72,7 +73,8 @@ export const projects = [
     subtitle: "Landlord and tenant apps for the full rental operation",
     year: "2026",
     tags: ["React Native", "Expo", "Prisma"],
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=1400&q=80",
     aspect: "aspect-[4/5]",
     accent: "#5eead4",
     href: "",
@@ -83,7 +85,8 @@ export const projects = [
     subtitle: "WordPress booking engine with a React admin SPA",
     year: "2026",
     tags: ["WordPress", "PHP", "React"],
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1400&q=80",
     aspect: "aspect-[4/3]",
     accent: "#a78bfa",
     href: "",
@@ -94,7 +97,8 @@ export const projects = [
     subtitle: "No-code trigger-to-action engine on a drag-and-drop canvas",
     year: "2026",
     tags: ["WordPress", "React Flow", "PHP"],
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1644088379091-d574269d422f?auto=format&fit=crop&w=1400&q=80",
     aspect: "aspect-[5/4]",
     accent: "#f0abfc",
     href: "",
@@ -105,7 +109,8 @@ export const projects = [
     subtitle: "Full Site Editing block theme for a SaaS product suite",
     year: "2026",
     tags: ["Gutenberg", "theme.json", "PHP"],
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
     aspect: "aspect-[4/3]",
     accent: "#fdba74",
     href: "",
@@ -116,7 +121,8 @@ export const projects = [
     subtitle: "FSE theme with 22 custom blocks and design tokens",
     year: "2026",
     tags: ["WordPress FSE", "Gutenberg", "CSS"],
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80",
     aspect: "aspect-[16/11]",
     accent: "#7dd3fc",
     href: "",
