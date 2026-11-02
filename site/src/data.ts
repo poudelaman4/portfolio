@@ -11,7 +11,7 @@ export const profile = {
     "I'm a full-stack developer from Bharatpur, Nepal. I graduated in Computer Engineering in 2025 and have since shipped production features at INEV Technologies across Angular, React and Next.js frontends, NestJS/Express and PHP backends, WordPress plugins, and MySQL/PostgreSQL.",
     "I like the whole path: data models, API contracts, and the last 10% of interface polish. Outside work I build projects to learn — a multi-role booking marketplace, a sentiment dashboard, an NFC canteen payment system, and small Godot games.",
   ],
-  resume: "/resume.pdf",
+  resume: "./resume.pdf",
 }
 
 export const stats: {

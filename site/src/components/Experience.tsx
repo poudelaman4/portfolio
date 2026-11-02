@@ -60,7 +60,7 @@ export function Experience() {
               Open to junior full-stack roles
             </span>
             <a
-              href="/resume.pdf"
+              href="./resume.pdf"
               className="inline-flex items-center gap-1.5 text-cream/70 underline decoration-white/20 underline-offset-4 transition-colors hover:text-acid hover:decoration-acid/50"
             >
               Download résumé

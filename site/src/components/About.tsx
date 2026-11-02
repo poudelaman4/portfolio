@@ -77,7 +77,7 @@ export function About() {
                     <p className="text-xs text-muted">Open to junior full-stack roles</p>
                   </div>
                   <a
-                    href="/resume.pdf"
+                    href="./resume.pdf"
                     className="grid size-10 shrink-0 place-items-center rounded-full border border-white/10 transition-colors hover:border-acid/50 hover:text-acid"
                     aria-label="Download résumé"
                   >
