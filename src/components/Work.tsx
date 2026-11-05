@@ -130,7 +130,7 @@ export function Work() {
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed text-muted">
-            Six products shipped at INEV Technologies, plus four open source
+            Six products built at INEV Technologies, plus four open source
             projects on GitHub.
           </p>
         </div>

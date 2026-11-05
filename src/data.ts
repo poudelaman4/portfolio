@@ -6,9 +6,9 @@ export const profile = {
   timezone: "GMT+5:45",
   email: "poudelaman4@gmail.com",
   tagline:
-    "Full-stack developer with a year of production experience at INEV Technologies. I care about clean data models, clear APIs and interfaces that stay out of the way.",
+    "Full-stack developer with professional experience at INEV Technologies. I care about clean data models, clear APIs and interfaces that stay out of the way.",
   bio: [
-    "I'm a full-stack developer from Bharatpur, Nepal. I graduated in Computer Engineering in 2025 and have since shipped production features at INEV Technologies across Angular, React and Next.js frontends, NestJS/Express and PHP backends, WordPress plugins, and MySQL/PostgreSQL.",
+    "I'm a full-stack developer from Bharatpur, Nepal. I graduated in Computer Engineering in 2025 and spent six months at INEV Technologies working across Angular, React and Next.js frontends, NestJS/Express and PHP backends, WordPress plugins, and MySQL/PostgreSQL.",
     "I like the whole path: data models, API contracts, and the last 10% of interface polish. Outside work I build projects to learn — a multi-role booking marketplace, a sentiment dashboard, an NFC canteen payment system, and small Godot games.",
   ],
   resume: "./resume.pdf",
@@ -21,7 +21,7 @@ export const stats: {
   decimals?: number
 }[] = [
   { value: 4, suffix: "", label: "Featured projects on GitHub" },
-  { value: 1, suffix: "+", label: "Years in production" },
+  { value: 6, suffix: "", label: "Months at INEV Technologies" },
   { value: 2, suffix: "", label: "Roles at INEV Technologies" },
   {
     value: 3.4,
@@ -179,12 +179,12 @@ export const projects = [
 
 export const experience = [
   {
-    period: "2026 · 1 yr",
+    period: "2026 · 3 mos",
     role: "Full-Stack Developer",
     company: "INEV Technologies",
     type: "Bharatpur, Nepal",
     description:
-      "Shipped production features across React/Next.js and Angular frontends with NestJS/Express and PHP backends on PostgreSQL and MySQL. Built WordPress plugins and block themes, and debugged across the stack.",
+      "Developed features across React/Next.js and Angular frontends with NestJS/Express and PHP backends on PostgreSQL and MySQL. Engineered WordPress plugins and block themes, and debugged across the stack.",
   },
   {
     period: "2026 · 3 mos",
